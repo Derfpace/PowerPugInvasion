@@ -6,7 +6,7 @@ package
 	{
 		public function TitleWorld()
 		{
-			add(
+			add(new TitleEntity);
 		}
 	}
 }
