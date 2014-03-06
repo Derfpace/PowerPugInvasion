@@ -2,22 +2,26 @@ package
 {
 	import net.flashpunk.Entity
 	import net.flashpunk.FP
-	[Embed(source="assets/NewGame.png")] private const(NEWGAME)
+	import net.flashpunk.World
+	import net.flashpunk.graphics.Text
+	import net.flashpunk.utils.Input
+	import net.flashpunk.utils.Key
 	
 	public class NewGameEntity extends Entity
 	{
 		public function NewGameEntity()
 		{
-			graphic = new Image(NEWGAME);
-			x = halfWidth - 100;
-			y = halfHeight;
+			graphic = new Text("press X to start");
+			x = 400 - 60;
+			y = 300 - halfHeight;
 		}
 		
 		override public function update():void
 		{
-			if (Input.mousePressed && collidePoint(x, y, Input.mouseX, Input.mouseY))
+			if (Input.check(Key.X))
 			{
-				FP.World = new World(Level1World)
+				trace("starting level 1");
+				FP.world = new Level1World;
 			}
 		}
 	}

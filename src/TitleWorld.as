@@ -7,6 +7,7 @@ package
 		public function TitleWorld()
 		{
 			add(new TitleEntity);
+			add(new NewGameEntity);
 		}
 	}
 }

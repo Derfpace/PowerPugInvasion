@@ -2,10 +2,9 @@ package
 {
 	import net.flashpunk.Entity
 	
-	[Embed(source="assets/powerpug.png")] private const(POWERPUG)
-	
 	public class PugEntity extends Entity
 	{
+		[Embed(source="assets/powerpug.png")] private const POWERPUG:Class
 		public function PugEntity()
 		{
 			graphic = new Image(POWERPUG);
