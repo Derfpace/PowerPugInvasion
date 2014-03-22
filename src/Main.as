@@ -7,8 +7,9 @@ package
 	{
 		public function Main()
 		{
-			super(800, 600, 60, true);
+			super(1366, 768, 60, true);
 			FP.world = new TitleWorld;
+			FP.screen.color = 0x444499;
 		}
 		
 		override public function init():void

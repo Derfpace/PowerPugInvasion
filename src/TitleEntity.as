@@ -9,8 +9,8 @@ package
 		public function TitleEntity()
 		{
 			graphic = new Text("Power Pug Ivasion");
-			x = super.halfWidth - 50;
-			y = super.halfHeight - 200;
+			x = 400 - 50;
+			y = 100
 			
 		}
 	}

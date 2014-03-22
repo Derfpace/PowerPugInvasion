@@ -1,19 +1,25 @@
 package
 {
-	import net.flashpunk.World
-	
-	public class Level1World extends World
+	import net.flashpunk.World;
+	public class Level2World extends World
 	{
-		public function Level1World()
+		public function Level2World()
 		{
-			//add(new FistEntity);
+			TryAgainEntity.currentLevel = 2;
 			add(new PlayerEntity);
-			add(new LivesEntity);
 			add(new TimerEntity);
-			add(new PugEntity(19, 7));
-			add(new PugEntity(27, 7));
-			add(new BlockEntity(0, 11));
-			add(new BlockEntity(1, 11));
+			add(new GiantPugEntity(-15, 2));
+			add(new BlockEntity(-9, 11) );
+			add(new BlockEntity(-8, 11) );
+			add(new BlockEntity(-7, 11) );
+			add(new BlockEntity(-6, 11) );
+			add(new BlockEntity(-5, 11) );
+			add(new BlockEntity(-4, 11) );
+			add(new BlockEntity(-3, 11) );
+			add(new BlockEntity(-2, 11) );
+			add(new BlockEntity(-1, 11) );
+			add(new BlockEntity(0, 11) );
+			add(new BlockEntity(1, 11) );
 			add(new BlockEntity(2, 11));
 			add(new BlockEntity(3, 11));
 			add(new BlockEntity(6, 11));
@@ -49,7 +55,6 @@ package
 			add(new BlockEntity(46, 7));
 			add(new BlockEntity(47, 7));
 			add(new CheckpointEntity(44, 6));
-			add(new PugEntity(44, 3));
 			
 			add(new BlockEntity(48, 11));
 			add(new BlockEntity(49, 11));
@@ -65,7 +70,6 @@ package
 			add(new BlockEntity(72, 11));
 			add(new BlockEntity(73, 11));
 			
-			add(new PugEntity(76, 8));
 			add(new BlockEntity(76, 11));
 			add(new BlockEntity(77, 11));
 			add(new BlockEntity(78, 11));
