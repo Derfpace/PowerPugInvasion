@@ -1,6 +1,7 @@
 package
 {
 	import net.flashpunk.Entity;
+	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Text
 	
 	public class CheckpointEntity extends Entity
@@ -22,8 +23,8 @@ package
 		{
 			if (collide("player", x, y))
 			{
-				PlayerEntity.checkpointX = x
-				PlayerEntity.checkpointY = (y - 100)
+				FP.world.checkpointX = x
+				FP.world.checkpointY = (y - 100)
 				collected = true
 			}
 			if (collected == true)

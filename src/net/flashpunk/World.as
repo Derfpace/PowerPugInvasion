@@ -10,6 +10,31 @@
 	public class World extends Tweener
 	{
 		/**
+		 * Checkpoint X position
+		 */
+		public var checkpointX:int;
+		
+		/**
+		 * Checkpoint Y position
+		 */
+		public var checkpointY:int;
+		
+		/**
+		 * used to count time.
+		 */
+		private var counter:Number = 0;
+		
+		/**
+		 * seconds passed
+		 */
+		public var seconds:int = 0;
+		
+		/**
+		 * Minutes passed
+		 */
+		public var minutes:int = 0;
+		
+		/**
 		 * If the render() loop is performed.
 		 */
 		public var visible:Boolean = true;
@@ -61,6 +86,18 @@
 				}
 				if (e._graphic && e._graphic.active) e._graphic.update();
 				e = e._updateNext;
+			}
+			//timer logic
+			counter += FP.elapsed;
+			if (counter >= 1)
+			{
+				counter = 0;
+				seconds++;
+			}
+			if (seconds >= 60) 
+			{
+				seconds = 0;
+				minutes++;
 			}
 		}
 		

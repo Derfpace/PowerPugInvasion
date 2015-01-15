@@ -1,5 +1,6 @@
 ﻿package net.flashpunk
 {
+	import flash.desktop.NativeApplication;
 	import flash.display.MovieClip;
 	import flash.display.StageAlign;
 	import flash.display.StageDisplayState;
@@ -13,6 +14,7 @@
 
 	import net.flashpunk.utils.Draw;
 	import net.flashpunk.utils.Input;
+	import net.flashpunk.utils.Key;
 
 	/**
 	 * Main game Sprite class, added to the Flash Stage. Manages the game loop.
@@ -27,12 +29,12 @@
 		/**
 		 * Cap on the elapsed time (default at 30 FPS). Raise this to allow for lower framerates (eg. 1 / 10).
 		 */
-		public var maxElapsed:Number = 0.0333;
+		public var maxElapsed:Number = 0.01665;
 		
 		/**
 		 * The max amount of frames that can be skipped in fixed framerate mode.
 		 */
-		public var maxFrameSkip:uint = 5;
+		public var maxFrameSkip:uint = 2;
 		
 		/**
 		 * The amount of milliseconds between ticks in fixed framerate mode.
@@ -96,6 +98,7 @@
 				FP._world.update();
 			}
 			FP._world.updateLists(false);
+			if (Input.check(Key.ESCAPE)) stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
 		}
 		
 		/**
@@ -147,7 +150,7 @@
 			stage.align = StageAlign.TOP_LEFT;
 			stage.quality = StageQuality.HIGH;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
-			stage.displayState = StageDisplayState.NORMAL;
+			stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
 		}
 		
 		/** @private Event handler for stage entry. */

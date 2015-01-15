@@ -1,24 +1,19 @@
-package
-{
+package {
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Text;
-	import PlayerEntity
+	import net.flashpunk.FP;
 	
-	public class LivesEntity extends Entity
-	{
-		private var livesnumber:String = PlayerEntity.lives.toString();
-		public function LivesEntity()
-		{
+	public class LivesEntity extends Entity {
+		private var livesnumber:String = String(Main.lives);
+		public function LivesEntity() {
 			graphic = new Text(livesnumber)
-			x = PlayerEntity.playerX + 400
-			y = 10
+			x = FP.camera.x + (FP.width / 2);
+			y = 0;
 		}
-		
-		override public function update():void
-		{
-			x = PlayerEntity.playerX + 25
-			y = 10
-			livesnumber = String(PlayerEntity.lives);
+		override public function update():void {
+			x = FP.camera.x + (FP.width / 2);
+			y = FP.camera.y;
+			livesnumber = String(Main.lives);
 			graphic = new Text(livesnumber)
 		}
 	}
